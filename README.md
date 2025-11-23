@@ -88,7 +88,7 @@ Geographical Coverage
 2. Open:
     ```bash
     index.html
-in any browser.
+    in any browser.
 
-License
+## License
 This project is for educational use only. All rights reserved.
