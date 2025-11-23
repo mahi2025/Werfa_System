@@ -71,7 +71,7 @@ Geographical Coverage
 - **Potential Expansion:** Universities across Ethiopia  
 - **Environment:** Campus network or local deployment  
 
-## 🚀Future Enhancements
+## Future Enhancements
 
 - Add **database** 
 - Implement **real-time queue updates**
@@ -80,17 +80,15 @@ Geographical Coverage
 - Develop **mobile app version**
 - Connect to **cloud backend** 
 
-# 📘 Installation & Usage
+# Installation & Usage
 
 1. Download or clone the repository:
    ```bash 
     git clone https://github.com/yourusername/Werfa-System.git
 2. Open:
-```bash
+    ```bash
     index.html
 in any browser.
 
-
 License
-
 This project is for educational use only. All rights reserved.
