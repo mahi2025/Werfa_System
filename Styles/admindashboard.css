@@ -1,0 +1,135 @@
+:root {
+  --primary-color: #30475E;
+  --card-hover: #2e2e2e;
+  --border-light: rgba(255, 255, 255, 0.05);
+  --bg-overlay: rgba(255, 255, 255, 0.1);
+  --text-dark: #000;
+  --shadow-color-primary: rgba(139, 92, 246, 0.3);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: #f3f6fa;
+    height: 100vh;
+}
+header {
+    background: #30475E;;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    list-style: none;
+    transition: 0.3s;
+}
+
+header a:hover {
+    color: #c4b5fd;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+main > div {
+    width: 35%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px  #c4b5fd;;
+}
+
+main > div h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+main > div p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+button {
+    margin: 15px 0;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #30475E;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background:  #a38ef6;
+}
+
+.right {
+    width: 45%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+.right h2 {
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background: #30475E;
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+}
+
+table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+table tr:hover td {
+    background: #f2f2f2;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 180px;
+    font-size: 14px;
+    color: #666;
+}
+
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+    .left,
+    .right,
+    main > div {
+        width: 100%;
+    }
+}

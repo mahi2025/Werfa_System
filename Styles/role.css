@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: hsl(0, 0%, 9%);
+    color: white;
+}
+
+.navbar{
+	position: fixed;
+	height: 60px;
+	width: 100%;
+	top: 0;
+	background: rgba(0,0,0,0.4);
+}
+.navbar .logo{
+	width: 140px;
+	height: auto;
+	padding: 20px 40px;
+}
+.navbar ul{
+	float: right;
+	margin-right: 20px;
+    padding-top: 10px;
+}
+.navbar ul li{
+	list-style: none;
+	margin: 0 4px;
+	display: inline-block;
+	line-height: 30px;
+}
+.navbar ul li a{
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	padding: 6px 13px;
+	text-decoration: none;
+	transition: .4s;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+	background: hsl(240, 9%, 21%);
+	border-radius: 4px;
+}
+.header{
+    text-align: center;
+    margin-top: 100px;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; 
+}
+
+.container .button{
+    position: relative;
+    align-items: center;
+    float: left;
+    margin-left: 20px;
+    margin-top: 40px;
+    background-color: black;
+    height: 50px;
+	width: 150px;
+    font-size: 22px;
+	font-weight: 600;
+    outline: none;
+	cursor: pointer;
+    border-radius: 25px;
+	transition: .4s;
+    border: 0.5px solid #976ff2;
+    display: grid;
+    place-items: center;
+}
+
+footer{
+    color: white;
+    position: fixed;
+	height: 40px;
+	width: 100%;
+	bottom: 0;
+    padding-top: 10px;
+    font-size: large;
+    text-align: center;
+	background: rgba(0,0,0,0.4)
+}

@@ -2,57 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Portal</title>
+    <title>Werfa Admin Portal</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="Styles/adminlogin.css">
 </head>
+
 <body>
-<main>
-<h1> Werfa Admin Portal</h1>
-    <div>
-        <div class="signin"> 
-            <p>Sign in</p>
-            <div>
-                 <label for="username">
-                    User Name
-                </label>
-                <input type="text" name="username" placeholder="username" required>
-                 <label for="password">
-                    Password
-                </label>
-                <input type="password" name="Password" placeholder="Password" required>
-            </div>
+    <div class="container">
 
-            <div>
-                <button>
-                    sign in
-                </button>
-            </div>
+        <div class="form-box">
+            <form action="#">
+                <h1>Sign In</h1>
+
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+                <span>or use your account</span>
+
+                <div class="infield">
+                    <input type="email" placeholder="Email" required>
+                </div>
+
+                <div class="infield">
+                    <input type="password" placeholder="Password" required>
+                </div>
+
+                <a href="#" class="forgot">Forgot your password?</a>
+
+               <a href="admindashboard.html"> <button>Sign In</button></a>
+            </form>
         </div>
+
+        <div class="form-box">
+            <form action="#">
+                <h1>Sign Up</h1>
+
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+                <span>or create a new account</span>
+
+                <div class="infield">
+                    <input type="email" placeholder="Email" required>
+                </div>
+
+                <div class="infield">
+                    <input type="password" placeholder="Password" required>
+                </div>
+
+              <a href="admindashboard.html"><button>Sign Up</button></a>
+            </form>
+        </div>
+
     </div>
-
-    <div class="sign up">
-        <div>
-                 <label for="username">
-                    User Name
-                </label>
-                <input type="text" name="username" placeholder="username" required>
-                 <label for="password">
-                    Password
-                </label>
-                <input type="password" name="Password" placeholder="Password" required>
-            </div>
-
-            <div>
-                <button>
-                    Sign Up
-                </button>
-                <p>Already have an account? Sign in</p>
-            </div>
-        
-    </div>
-
-</main>  
-
-
 </body>
 </html>

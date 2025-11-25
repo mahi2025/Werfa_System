@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700&display=swap');
+
+:root {
+  --primary-color: #a78bfa;
+  --primary-dark: #8b5cf6;
+  --primary-light: #c4b5fd;
+  --primary-gradient: linear-gradient(135deg, #a78bfa, #8b5cf6);
+  --bg-dark: #1a1a1a;
+  --text-light: #f3f4f6;
+  --text-gray: #9ca3af;
+  --card-bg: #252525;
+  --card-hover: #2e2e2e;
+  --border-radius: 12px;
+  --border-light: rgba(255, 255, 255, 0.05);
+  --bg-overlay: rgba(255, 255, 255, 0.1);
+  --text-dark: #000;
+  --shadow-color-primary: rgba(139, 92, 246, 0.3);
+  --shadow-color-primary-hover: rgba(139, 92, 246, 0.4);
+}
+*{
+	padding: 0;
+	margin: 0;
+    font-family: sans-serif;
+}
+
+.navbar{
+	position: fixed;
+	height: 80px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.4);
+}
+.navbar .logo{
+	width: 140px;
+	height: auto;
+	padding: 20px 100px;
+}
+.navbar ul{
+	float: right;
+	margin-right: 20px;
+}
+.navbar ul li{
+	list-style: none;
+	margin: 0 8px;
+	display: inline-block;
+	line-height: 80px;
+}
+.navbar ul li a{
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	padding: 6px 13px;
+	text-decoration: none;
+	transition: .4s;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+	background: hsl(240, 9%, 21%);
+	border-radius: 4px;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+.container img{
+    width: 100%;
+}
+.text-container {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-style: bold;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 2px;
+}
+.text-container button{
+    margin-top: 40px;
+    color: white;
+    background-color: black;
+    height: 50px;
+	width: 150px;
+    font-size: 22px;
+	font-weight: 600;
+    outline: none;
+	cursor: pointer;
+    border-radius: 25px;
+	transition: .4s;
+    border: 0.5px solid hsl(308, 90%, 72%);	
+}
+
+.text-container button:hover{
+	background: hsl(277, 13%, 34%);
+}
+footer{
+    color: white;
+    position: fixed;
+	height: 30px;
+	width: 100%;
+	bottom: 0;
+    padding-top: 10px;
+    font-size: large;
+    text-align: center;
+	background: rgba(0,0,0,0.4)
+}
