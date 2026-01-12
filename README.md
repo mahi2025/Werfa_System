@@ -1,5 +1,7 @@
 # Werfa System  
 
+## Project for Internet Programing I course 
+
 ### Static Web-Based Queue Management Prototype
 
 ##  Project Overview
@@ -50,8 +52,9 @@ To design and develop a static web-based prototype of the Werfa System.
 
 - **HTML5**
 - **CSS3**
-- **JavaScript**
+- **JavaScript (Vanilla JS)**
 - **RAD (Rapid Application Development) model**
+- **Static Web Technologies Only**
 
 ## Limitations
 
@@ -91,4 +94,4 @@ Geographical Coverage
 in any browser.
 
 ## License
-This project is for educational use only. 
+This project is for educational use only. All rights reserved.

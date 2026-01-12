@@ -1,11 +1,15 @@
 :root {
-  --primary-color: #30475E;
-  --card-hover: #2e2e2e;
-  --border-light: rgba(255, 255, 255, 0.05);
-  --bg-overlay: rgba(255, 255, 255, 0.1);
-  --text-dark: #000;
-  --shadow-color-primary: rgba(139, 92, 246, 0.3);
+  --bg-main: #F4F6F8;
+  --primary-blue: #1E3A5F;
+  --accent-orange: #F59E0B;
+
+  /* Supporting */
+  --white: #FFFFFF;
+  --text-dark: #1F2937;
+  --text-muted: #6B7280;
+  --border-light: #E5E7EB;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -14,13 +18,14 @@
 }
 
 body {
-    background: #f3f6fa;
+    background: var(--bg-main);
+    color: var(--text-dark);
     height: 100vh;
 }
 header {
-    background: #30475E;;
-    color: #fff;
-    padding: 15px 30px;
+     background: var(--primary-blue);
+    color: var(--white);
+    padding: 4px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,11 +43,6 @@ header a {
     list-style: none;
     transition: 0.3s;
 }
-
-header a:hover {
-    color: #c4b5fd;
-}
-
 main {
     display: flex;
     padding: 20px;
@@ -68,20 +68,36 @@ main > div p {
 
 button {
     margin: 15px 0;
-    padding: 12px 25px;
+    padding: 10px 15px;
     font-size: 18px;
     border: none;
     border-radius: 8px;
-    background: #30475E;
-    color: #fff;
+    background: var(--accent-orange);
+    color: white;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background:  #a38ef6;
+   background: #d97706; 
 }
 
+.one h2{
+    font-size: 20px;
+    margin-top: 80px;
+    margin-bottom: 15px;
+}
+.one p{
+    margin-bottom: 40px
+}
+.two h2{
+    margin-left: 210px;
+   font-size: 25px;
+}
+
+.buttons{
+    margin-right: 30px;
+}
 .right {
     width: 45%;
     background: #fff;
@@ -95,6 +111,8 @@ button:hover {
 }
 
 table {
+    margin-left: 90PX;
+    margin-top: 30PX;
     width: 100%;
     border-collapse: collapse;
 }
@@ -102,7 +120,7 @@ table {
 table th {
     background: #30475E;
     color: white;
-    padding: 12px 8px;
+    padding: 10px 70px;
     text-align: left;
 }
 
@@ -118,7 +136,7 @@ table tr:hover td {
 footer {
     text-align: center;
     padding: 10px;
-    margin-top: 180px;
+    margin-top: 270px;
     font-size: 14px;
     color: #666;
 }
@@ -133,3 +151,5 @@ footer {
         width: 100%;
     }
 }
+
+

@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="styles/admindashboard.css">
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles/admindashboard.css">
+
+  <script>
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+      window.location.href = "adminlogin.html";
+    }
+  </script>
 </head>
+
 <body>
-    <header>
-        <h2> Werfa Admin</h2>
-        <a href=" " alt="logoout"><li>Logout</li></a>
-    </header>
+<header>
+  <h2>Werfa Admin</h2>
+  <button onclick="adminLogout()">
+    Logout
+  </button>
+</header>
 
-    <main>
-        <aside class="left"></aside>
-        <div>
-            <h2>Now Serving #45</h2>
-            <p> Next in queue: #46 </p>
+<main>
+  <section class="one">
+    <h2 id="adminNowServing">Now Serving: Not started</h2>
+    <p id="totalWaiting">Total waiting:</p>
+    <div class="buttons">
+    <button  onclick="serveNext()">Next Student</button>
+      </div>
+    <button onclick="clearQueue()">
+      Clear Queue
+    </button>
+  
+  </section>
 
-            <button>
-                Next Student
-            </button>
-            <p>Total waiting:8</p>
-        </div>
-        
-        <aside class="right"> 
-            <h2>Student in Queue</h2>
-            <table>
-                <tr>
-                    <th>No</th>
-                    <th>Student Name</th>
-                    <th> Ticket#</th>
-                    <th>Satus</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Hawi Tefra</td>
-                    <td>#46</td>
-                    <td>waiting</td>
-                </tr>
-            </table>
-        </aside>
-    </main>
-    <footer>
-            &copy; Werfa System 2025 
+  <section class="two">
+    <h2>Students in Queue</h2>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Ticket</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="studentTable"></tbody>
+    </table>
+  </section>
+</main>
+
+<footer>&copy; Werfa System 2025</footer>
+
+<script src="scripts/werfa.js"></script>
+<script>
+  initDB();
+  renderAdmin();
+</script>
+
 </body>
 </html>

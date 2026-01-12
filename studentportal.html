@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>student portal</title>
-    <link rel="stylesheet" href="Styles/studentportal.css">
+  <meta charset="UTF-8">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="Styles/studentportal.css">
 </head>
+
 <body>
-    <header>
-        <h1> Werfa System</h1>
-        <h3> Student portal</h3>
-        <nav>
-            <a href="index.html" alt="homepage"> <li>Home</li></a>
-             <a href="contact.html" alt="help page"> Help</a>
-        </nav>
-    </header>
+<header>
+  <h1>Werfa System</h1>
+  <h3>Student Portal</h3>
+</header>
 
-    <main>
-        <aside class="left">
-            <h2>Take a Number</h2>
-            <p>Please enter your details below</p>
-            <form>
-                <label for="fullname">
-                    Full Name
-                </label>
-                <input type="text" name="Fullname" placeholder="Full name" autofocus="on" required>
+<main>
+  <section class="data-section">
+    <form onsubmit="event.preventDefault(); takeNumber();">
+      <label>Full Name</label>
+      <input type="text" id="fullname" required>
 
-                <label for="id">
-                    Student ID
-                </label>
-                <input type="text" name="id" placeholder="3050/24" required>
-            </form>
-            <button>Take a Number</button>
-            <br> <br>
-            <p>You'll receive an SMS when you're 5 numbers away</p>
-        </aside>
+      <label>Student ID</label>
+      <input type="text" id="studentId" required>
 
-        <aside class="right">
-            <h2>Live Queue Status</h2>
-            <h1> Your Ticket #50</h1>
+      <button type="submit">Take a Number</button>
+    </form>
+  </section>
 
-            <p>Now serving: #45</p>
-            <p> Estimated wait: 12min</p>
+  <section class="ticket-section">
+    <h1 id="ticketNumber">Your Ticket #</h1>
+    <p class="serve" id="nowServing">Now serving:</p>
+    <p class="wait" id="waitTime">Estimated wait:</p>
+    <p id="countdown"></p>
 
-            <button>Back to queue</button>
-        </aside>
-    </main>
+    <button class="referesh" onclick="backToQueue()">Refresh Status</button>
+
+    <div id="smsBox" style="
+      display:none;
+      margin-top:10px;
+      padding:10px;
+      background:#e7f3ff;
+      border-left:4px solid #2196F3;">
+    </div>
+  </section>
+</main>
+
+<script src="scripts/werfa.js"></script>
+<script>
+  initDB();
+  renderStudent();
+
+  // simulate real-time updates
+  setInterval(renderStudent, 3000);
+</script>
 </body>
 </html>

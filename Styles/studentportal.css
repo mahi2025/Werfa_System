@@ -1,151 +1,145 @@
 :root {
-  --primary-color: #a78bfa;
-  --primary-dark: #8b5cf6;
-  --primary-light: #c4b5fd;
-  --primary-gradient: linear-gradient(135deg, #a78bfa, #8b5cf6);
-  --shadow-color-primary: rgba(139, 92, 246, 0.3);
-  --shadow-color-primary-hover: rgba(139, 92, 246, 0.4);
+  /* Theme (from second CSS) */
+  --bg-main: #F4F6F8;
+  --primary-blue: #1E3A5F;
+  --accent-orange: #F59E0B;
+  --white: #FFFFFF;
+  --text-dark: #1F2937;
+  --text-muted: #6B7280;
+  --border-light: #E5E7EB;
 }
+
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-    background: #f5f7fa;
+  background: var(--bg-main);
+  color: var(--text-dark);
 }
 
+/* Header */
 header {
-    background: #30475E;
-    color: #fff;
-    padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header h1 {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 header h3 {
-    font-weight: 400;
-    font-size: 18px;
-    opacity: 0.9;
+  font-size: 18px;
+  opacity: 0.9;
 }
 
 nav {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 nav a {
-    text-decoration: none;
-    color: #fff;
-    list-style: none;
-    font-size: 18px;
-    transition: 0.3s;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 18px;
 }
 
 nav a:hover {
-    color: #c4b5fd;
+  color: var(--accent-orange);
 }
 
+/* Layout */
 main {
-    display: flex;
-    padding: 40px;
-    gap: 30px;
-    justify-content: space-between;
+  display: flex;
+  padding: 40px;
+  gap: 30px;
+  justify-content: space-between;
 }
 
-.left {
-    width: 45%;
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+.left,
+.right {
+  width: 45%;
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
-.left h2 {
-    margin-bottom: 10px;
+.left h2,
+.right h2 {
+  margin-bottom: 10px;
 }
 
-.left p {
-    margin-bottom: 10px;
-    color: #444;
-}
-
+/* Forms */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 label {
-    font-size: 16px;
-    color: #333;
+  font-size: 16px;
 }
 
 input {
-    padding: 11px 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-    transition: 0.2s;
+  padding: 11px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
 }
 
 input:focus {
-    border-color: #30475E;
+  border-color: var(--primary-blue);
 }
 
+/* Buttons */
 button {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: #30475E;
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: 0.3s;
+  background: var(--accent-orange);
+  color: var(--white);
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 button:hover {
-    background: #c4b5fd;
-}
-.right {
-    width: 45%;
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  background: #d97706;
 }
 
-.right h2 {
-    margin-bottom: 10px;
+.data-section{
+  margin-left:150px;
+}
+.ticket-section{
+  margin-right:200px;
 }
 
-.right h1 {
-    font-size: 35px;
-    margin: 20px 0;
-    color: #30475E;
+.serve {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.wait{
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
-.right p {
-    margin: 10px 0;
-    font-size: 18px;
+.referesh{
+  margin-bottom: 40px;
 }
-
+/* Responsive */
 @media (max-width: 900px) {
-    main {
-        flex-direction: column;
-        padding: 20px;
-    }
-    .left,
-    .right {
-        width: 100%;
-    }
+  main {
+    flex-direction: column;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
 }
