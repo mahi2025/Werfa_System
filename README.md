@@ -50,9 +50,8 @@ To design and develop a static web-based prototype of the Werfa System.
 
 - **HTML5**
 - **CSS3**
-- **JavaScript (Vanilla JS)**
+- **JavaScript**
 - **RAD (Rapid Application Development) model**
-- **Static Web Technologies Only**
 
 ## Limitations
 
@@ -92,4 +91,4 @@ Geographical Coverage
 in any browser.
 
 ## License
-This project is for educational use only. All rights reserved.
+This project is for educational use only. 
