@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import { generateToken } from "../utils/jwt.js";
 import pool from "../db/index.js";
 
 export const registerStudent = async (req, res) => {
@@ -46,14 +46,10 @@ export const loginStudent = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const token = jwt.sign(
-      {
-        id: user.id,
-        role: user.role || "student",
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" },
-    );
+    const token = generateToken({
+      id: user.id,
+      role: user.role || "student",
+    });
 
     res.json({
       message: "Login successful",
@@ -90,16 +86,15 @@ export const adminLogin = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const token = jwt.sign(
-      {
-        id: admin.id,
-        role: "admin",
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" },
-    );
+   const token = generateToken(
+     {
+       id: admin.id,
+       role: "admin",
+     },
+     "7d",
+   );
 
-    res.json({
+    return res.json({
       message: "Admin login successful",
       token,
       admin: {

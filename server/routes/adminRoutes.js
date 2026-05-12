@@ -12,9 +12,9 @@ import {
 
 const router = express.Router();
 
+
 router.use(authMiddleware);
 router.use(adminOnly);
-
 
 router.get("/students", getAllStudents);
 
