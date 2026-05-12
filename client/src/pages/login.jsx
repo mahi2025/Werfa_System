@@ -1,64 +1,83 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { saveToken } from "../utils/auth";
+
+const API_URL = "http://localhost:5000/api";
+
 export default function Login() {
-  // 1. Declare the missing variables using State
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [error, setError] = useState("");
+
   const navigate = useNavigate();
 
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   const loginAdmin = async (e) => {
-    // Prevent the default form submission (page reload)
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/admin/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        // Now email and password are defined from state!
-        body: JSON.stringify({ email, password }),
-      });
+      setError("");
 
-      const data = await res.json();
+      const response = await fetch(
+        `${API_URL}/auth/admin/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-      if (res.ok && data.token) {
-        localStorage.setItem("token", data.token);
-        navigate("/admin");
-      } else {
-        alert(data.message || "Login failed");
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Login failed");
       }
+
+      saveToken(data.token);
+
+      navigate("/admin");
     } catch (err) {
-      console.error("Login error:", err);
+      setError(err.message);
     }
   };
 
   return (
-    <div style={{ padding: "50px", textAlign: "center" }}>
-      <h2>Admin Login</h2>
-      <form
-        onSubmit={loginAdmin}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px",
-          maxWidth: "300px",
-          margin: "0 auto",
-        }}
-      >
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={loginAdmin}>
+        <h2>Admin Login</h2>
+
+        {error && <p className="error-text">{error}</p>}
+
         <input
           type="email"
+          name="email"
           placeholder="Admin Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)} // Updates the 'email' variable
+          value={formData.email}
+          onChange={handleChange}
           required
         />
+
         <input
           type="password"
+          name="password"
           placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)} // Updates the 'password' variable
+          value={formData.password}
+          onChange={handleChange}
           required
         />
+
         <button type="submit">Login</button>
       </form>
     </div>
