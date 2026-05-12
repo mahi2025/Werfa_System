@@ -1,20 +1,18 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
+import express from "express";
+import authRoutes from "./routes/authRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+import ticketRoutes from "./routes/ticketRoutes.js";
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
 
-app.get("/test", (req, res) => {
- res.json({
-   message: "Backend working",
- });
-});
-
-app.get("/", (req, res) => {
-  res.send("API Running...");
+app.use("/api/auth", authRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/tickets", ticketRoutes);
+app.use((req, res, next) => {
+  req.io = io;
+  next();
 });
 
 const PORT = process.env.PORT || 5000;
