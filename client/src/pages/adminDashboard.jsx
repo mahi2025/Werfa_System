@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { socket } from "../socket";
+import QueueList from "../components/QueueList";
+import CallNextButton from "../components/CallNextButton";
+import ServingPanel from "../components/ServingPanel";
 
 export default function AdminDashboard() {
   const [queue, setQueue] = useState([]);
@@ -11,27 +14,26 @@ export default function AdminDashboard() {
   };
 
   useEffect(() => {
-    // initial load
     fetchQueue();
 
     socket.on("queue-updated", (updatedQueue) => {
       setQueue(updatedQueue);
     });
 
-    return () => {
-      socket.off("queue-updated");
-    };
+    return () => socket.off("queue-updated");
   }, []);
 
-  return (
-    <div>
-      <h1>Live Queue</h1>
+  const currentServing = queue.find((t) => t.status === "serving");
 
-      {queue.map((t) => (
-        <div key={t.id}>
-          {t.ticket_number} - {t.fullname} - {t.status}
-        </div>
-      ))}
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>Live Queue Dashboard</h1>
+
+      <CallNextButton />
+
+      <ServingPanel current={currentServing} />
+
+      <QueueList queue={queue} />
     </div>
   );
 }

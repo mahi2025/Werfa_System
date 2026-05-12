@@ -1,8 +1,15 @@
-function ServingScreen({ current }) {
+export default function ServingPanel({ current }) {
   return (
-    <div>
-      <h1>NOW SERVING</h1>
-      <h2>{current?.ticket_number}</h2>
+    <div style={{ margin: "20px 0" }}>
+      <h2> NOW SERVING</h2>
+
+      {current ? (
+        <h1>
+           {current.ticket_number} - {current.fullname}
+        </h1>
+      ) : (
+        <h3>No one is being served</h3>
+      )}
     </div>
   );
 }
