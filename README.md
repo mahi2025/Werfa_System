@@ -27,11 +27,16 @@ The current manual queuing method requires students to stand in long lines for s
 
 ## Technologies Used
 
-- **HTML5**
-- **CSS3**
-- **JavaScript (Vanilla JS)**
-- **RAD (Rapid Application Development) model**
-
+- HTML5
+- CSS3
+- JavaScrip
+- RAD (Rapid Application Development) model
+- Node.js
+- Express.js 
+- PostgreSQL 
+- JWT Authentication
+- CORS Middleware 
+- 
 ## Limitations
 
 - No automated notifications (SMS/email)
@@ -59,3 +64,4 @@ The current manual queuing method requires students to stand in long lines for s
 2. Open:
     ```bash
     index.html
+
