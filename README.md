@@ -29,14 +29,13 @@ The current manual queuing method requires students to stand in long lines for s
 
 - HTML5
 - CSS3
-- JavaScrip
-- RAD (Rapid Application Development) model
+- JavaScript
 - Node.js
 - Express.js 
 - PostgreSQL 
 - JWT Authentication
 - CORS Middleware 
-- 
+
 ## Limitations
 
 - No automated notifications (SMS/email)
